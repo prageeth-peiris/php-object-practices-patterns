@@ -1,0 +1,15 @@
+{
+
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    },
+
+    "files" : [
+
+      "app/BasicProblem/Constants.php"
+    ]
+  }
+
+
+}
