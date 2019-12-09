@@ -10,16 +10,20 @@ require_once "./vendor/autoload.php";
 
 
 
-$pref = \App\Creational\Singleton\Preferences::getInstance();
 
-$pref->setProperty("name","prageeth");
+$manger = new \App\Creational\Factory\Managers\BlogManager();
 
 
-unset($pref);
+echo $manger->getHeaderText();
 
-$pref2 =  \App\Creational\Singleton\Preferences::getInstance();
+echo $manger->getApptEncoder()->encode();
 
-print $pref2->getProperty("name");
+echo $manger->getFooterText();
+
+
+
+
+
 
 
 
