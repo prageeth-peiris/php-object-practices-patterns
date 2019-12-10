@@ -10,15 +10,16 @@ require_once "./vendor/autoload.php";
 
 
 
-
-$manger = new \App\Creational\Factory\Managers\BlogManager();
+$manger = new \App\Creational\AbstractFactory\Managers\BlogManager();
 
 
 echo $manger->getHeaderText();
 
-echo $manger->getApptEncoder()->encode();
-
 echo $manger->getFooterText();
+
+echo $manger->make(\App\Creational\AbstractFactory\Managers\CommsManager::CONTACT)->encode();
+
+
 
 
 
