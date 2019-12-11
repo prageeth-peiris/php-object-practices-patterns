@@ -11,14 +11,9 @@ require_once "./vendor/autoload.php";
 
 
 
-$manger = new \App\Creational\Factory\Managers\BlogManager();
+$worker = new \App\Creational\Prototype2\Minimal\Client();
 
 
-echo $manger->getHeaderText();
-
-echo $manger->getApptEncoder()->encode();
-
-echo $manger->getFooterText();
 
 
 
