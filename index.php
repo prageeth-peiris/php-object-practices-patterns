@@ -11,7 +11,9 @@ require_once "./vendor/autoload.php";
 
 
 
-$worker = new \App\Creational\Prototype2\Minimal\Client();
+$commsMgr = \App\ServiceLocator\AppConfig::getInstance()->getCommsManager();
+
+echo $commsMgr->getApptEncoder()->encode();
 
 
 
