@@ -11,7 +11,35 @@ require_once "./vendor/autoload.php";
 
 
 
-$worker = new \App\Creational\Prototype2\Minimal\Client();
+$main_army = new \App\Structural\Composite\Army();
+
+
+$main_army->addUnit([
+
+     new \App\Structural\Composite\LaserCanonUnit(),
+    new \App\Structural\Composite\Archer(),
+    new \App\Structural\Composite\Archer(),
+    new \App\Structural\Composite\Archer(),
+
+]);
+
+$sub_army = new \App\Structural\Composite\Army();
+
+
+$sub_army->addUnit([
+
+    new \App\Structural\Composite\LaserCanonUnit(),
+    new \App\Structural\Composite\Archer(),
+    new \App\Structural\Composite\Army()
+]);
+
+$main_army->addUnit($sub_army);
+$main_army->addUnit($sub_army);
+$main_army->addUnit($sub_army);
+
+$main_army->backdoor();
+//echo $main_army->bombardStrength();
+
 
 
 
