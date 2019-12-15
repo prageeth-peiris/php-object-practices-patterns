@@ -11,6 +11,7 @@ require_once "./vendor/autoload.php";
 
 
 
+
 $main_army = new \App\Structural\Composite\Army();
 
 
@@ -39,6 +40,7 @@ $main_army->addUnit($sub_army);
 
 $main_army->backdoor();
 //echo $main_army->bombardStrength();
+
 
 
 
