@@ -13,43 +13,8 @@ namespace App\Structural\Composite;
 
 
 
-class Army extends  Unit
+class Army extends  CompositeUnit
 {
-    private $units = [];
-
-    public function  addUnit($unit)
-    {
-
-        if(is_array($unit)){
-
-            foreach ($unit as $singleUnit){
-                $this->addUnit($singleUnit);
-
-            }
-
-            return;
-
-        }
-
-        if($unit instanceof  Unit){
-           return  $this->addSingleUnit($unit);
-
-        }
-
-        throw new UnitException("Invalid Unit Type");
-
-
-    }
-
-
-    private function addSingleUnit(Unit $unit){
-        if (in_array($unit, $this->units, true)) {
-            return "like repition like me";
-        }
-        array_push($this->units,$unit);
-    }
-
-
 
     public function bombardStrength(): int
     {
@@ -64,9 +29,6 @@ class Army extends  Unit
        return $total;
     }
 
-    public function backdoor(){
-        print_r($this->units);
-    }
 
 
 }

@@ -11,35 +11,29 @@ require_once "./vendor/autoload.php";
 
 
 
-
 $main_army = new \App\Structural\Composite\Army();
 
 
 $main_army->addUnit([
-
-     new \App\Structural\Composite\LaserCanonUnit(),
-    new \App\Structural\Composite\Archer(),
-    new \App\Structural\Composite\Archer(),
-    new \App\Structural\Composite\Archer(),
-
-]);
-
-$sub_army = new \App\Structural\Composite\Army();
-
-
-$sub_army->addUnit([
-
     new \App\Structural\Composite\LaserCanonUnit(),
-    new \App\Structural\Composite\Archer(),
-    new \App\Structural\Composite\Army()
+    new \App\Structural\Composite\Archer()
+
 ]);
 
-$main_army->addUnit($sub_army);
-$main_army->addUnit($sub_army);
-$main_army->addUnit($sub_army);
+$animal_army = new \App\Structural\Composite\AnimalForce();
 
-$main_army->backdoor();
-//echo $main_army->bombardStrength();
+$animal_army->addUnit(new  \App\Structural\Composite\Archer());
+
+
+$main_army->addUnit($animal_army);
+
+
+//(new \App\Structural\Composite\Archer())->addUnit(new \App\Structural\Composite\LaserCanonUnit());
+
+
+echo $main_army->bombardStrength();
+
+
 
 
 

@@ -9,19 +9,14 @@
 namespace App\Structural\Composite;
 
 
-abstract    class Unit
+abstract class Unit
 {
 
     abstract public function bombardStrength():int;
 
-  public  function  addUnit($unit){
-        throw new UnitException(get_class($this) . "is a leaf");
+    public function getComposite(){
+        return null;
     }
-
-    public function removeUnit($unit){
-        throw new UnitException(get_class($this) . "is a leaf");
-    }
-
 
 
 
