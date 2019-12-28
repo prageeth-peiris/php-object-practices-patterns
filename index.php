@@ -11,27 +11,15 @@ require_once "./vendor/autoload.php";
 
 
 
-$main_army = new \App\Structural\Composite\Army();
+$proc = new \App\Structural\Decorator\EEExample\AuthenticateRequest(new \App\Structural\Decorator\EEExample\LogRequest(new \App\Structural\Decorator\EEExample\MainProcess()));
 
 
-$main_army->addUnit([
-    new \App\Structural\Composite\LaserCanonUnit(),
-    new \App\Structural\Composite\Archer()
 
-]);
-
-$animal_army = new \App\Structural\Composite\AnimalForce();
-
-$animal_army->addUnit(new  \App\Structural\Composite\Archer());
+$proc->process(new \App\Structural\Decorator\EEExample\Request());
 
 
-$main_army->addUnit($animal_army);
 
 
-//(new \App\Structural\Composite\Archer())->addUnit(new \App\Structural\Composite\LaserCanonUnit());
-
-
-echo $main_army->bombardStrength();
 
 
 
