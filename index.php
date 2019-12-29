@@ -9,13 +9,17 @@
 require_once "./vendor/autoload.php";
 
 
+$facade = new \App\Structural\Facade\ProductFacade(__DIR__."/app/Structural/Facade/test.txt");
 
 
-$proc = new \App\Structural\Decorator\EEExample\AuthenticateRequest(new \App\Structural\Decorator\EEExample\LogRequest(new \App\Structural\Decorator\EEExample\MainProcess()));
+$object = $facade->getProduct("234");
+
+print_r($object);
 
 
 
-$proc->process(new \App\Structural\Decorator\EEExample\Request());
+
+
 
 
 
